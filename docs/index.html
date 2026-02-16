@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapVisualizer – Interactive Map Visualization for .NET</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --muted: #6c757d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); line-height: 1.6; background: var(--bg); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .hero {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero p  { font-size: 1.15rem; opacity: 0.85; max-width: 640px; margin: 0 auto 1.5rem; }
+        .hero .badges a { margin: 0 0.25rem; }
+        .hero .badges img { vertical-align: middle; }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .feature-card h3 { margin-bottom: 0.5rem; color: var(--primary); }
+
+        h2 { margin-bottom: 1rem; color: var(--primary); }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+
+        .structure { margin: 1rem 0; }
+        .structure pre { background: var(--card-bg); color: var(--text); }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>MapVisualizer</h1>
+        <p>Clickable map visualization library for ASP.NET WebForms and WinForms applications</p>
+        <div class="badges">
+            <a href="https://github.com/gpavlovych/MapVisualizer/actions/workflows/ci-build.yml">
+                <img src="https://github.com/gpavlovych/MapVisualizer/actions/workflows/ci-build.yml/badge.svg" alt="CI Build" />
+            </a>
+            <a href="https://github.com/gpavlovych/MapVisualizer/blob/master/LICENSE">
+                <img src="https://img.shields.io/github/license/gpavlovych/MapVisualizer" alt="License" />
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            MapVisualizer is a .NET library that provides interactive map visualization capabilities
+            for desktop and web applications. It renders geographic data from SQL databases with
+            support for clickable regions, color-coded areas, and customizable legends. The library
+            includes Entity Framework integration for seamless database access and supports both
+            WinForms and ASP.NET WebForms platforms.
+        </p>
+
+        <h2 style="margin-top:2rem;">Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Interactive Maps</h3>
+                <p>Draw maps with polygons representing cities or regions with full click-detection support.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Customizable Appearance</h3>
+                <p>Configure colors, borders, fonts, padding, and display color-coded legends with custom captions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Database Integration</h3>
+                <p>Built-in Entity Framework support for geographic data using SqlGeometry types.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Cross-Platform</h3>
+                <p>Works with both WinForms desktop applications and ASP.NET WebForms web applications.</p>
+            </div>
+            <div class="feature-card">
+                <h3>High-Quality Rendering</h3>
+                <p>Smooth anti-aliased rendering with automatic coordinate transformation between geographic and screen coordinates.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Easy to Use</h3>
+                <p>Simple API surface with <code>DrawMap</code> and <code>GetCityAtPoint</code> methods for quick integration.</p>
+            </div>
+        </div>
+
+        <h2>Quick Start</h2>
+<pre><code>// Define legend
+var legend = new Dictionary&lt;Color, string&gt;()
+{
+    { ColorTranslator.FromHtml("#63BE7B"), "&gt;95%" },
+    { ColorTranslator.FromHtml("#E15151"), "&lt;30%" }
+};
+
+// Draw the map
+using (var mapImage = MapHelper.DrawMap(
+    new Size(800, 600),
+    paddingLeft: 50, paddingRight: 50,
+    paddingTop: 50, paddingBottom: 50,
+    backgroundColor: Color.White,
+    borderPen: new Pen(Color.Black, 1.0f),
+    legendItems: legend,
+    legendCaption: "Legend",
+    legendFont: new Font(FontFamily.GenericMonospace, 8, FontStyle.Bold),
+    legendFontColor: Color.Black,
+    lineSpacing: 1.5f))
+{
+    e.Graphics.DrawImageUnscaled(mapImage, 0, 0);
+}</code></pre>
+
+        <h2 style="margin-top:2rem;">Project Structure</h2>
+        <div class="structure">
+<pre>MapVisualizer/
+├── MapVisualizer/                        # Core library
+│   ├── MapHelper.cs                      # Main API
+│   ├── CityInfo.cs                       # City data model
+│   └── CityAppearanceInfo.cs             # Appearance config
+├── TestGeometryDraw/                     # WinForms demo
+├── TestGeometryDrawWebApplication/       # ASP.NET WebForms demo
+└── MapVisualizer.sln                     # Solution file</pre>
+        </div>
+
+        <h2 style="margin-top:2rem;">Prerequisites</h2>
+        <ul style="margin-left:1.5rem;">
+            <li>Visual Studio 2015 or later</li>
+            <li>.NET Framework 4.5 or later</li>
+            <li>SQL Server with geographic data support</li>
+            <li>Entity Framework 6.x</li>
+        </ul>
+
+        <h2 style="margin-top:2rem;">Getting Started</h2>
+<pre><code>git clone https://github.com/gpavlovych/MapVisualizer.git
+cd MapVisualizer</code></pre>
+        <p style="margin-top:0.75rem;">
+            Open <code>MapVisualizer.sln</code> in Visual Studio, restore NuGet packages, and build the solution.
+            See the <a href="https://github.com/gpavlovych/MapVisualizer#readme">README</a> for detailed instructions.
+        </p>
+
+        <h2 style="margin-top:2rem;">License</h2>
+        <p>
+            This project is licensed under the
+            <a href="https://github.com/gpavlovych/MapVisualizer/blob/master/LICENSE">MIT License</a>.
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2016 &ndash; 2026 <a href="https://github.com/gpavlovych">gpavlovych</a> &middot;
+        <a href="https://github.com/gpavlovych/MapVisualizer">View on GitHub</a>
+    </footer>
+</body>
+</html>
