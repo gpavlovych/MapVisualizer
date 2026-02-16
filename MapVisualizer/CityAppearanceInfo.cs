@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace MapVizualizer
+namespace MapVisualizer
 {
     /// <summary>
     /// Container for city information: city name and city color in the map.

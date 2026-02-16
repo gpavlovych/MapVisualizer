@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MapVizualizer
+namespace MapVisualizer
 {
     using System;
     using System.Collections.Generic;

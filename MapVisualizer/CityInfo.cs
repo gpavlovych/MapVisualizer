@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Spatial;
 using System.Drawing;
 
-namespace MapVizualizer
+namespace MapVisualizer
 {
     internal class CityInfo
     {
