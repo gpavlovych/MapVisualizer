@@ -100,9 +100,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MapVizualizer\MapVizualizer.csproj">
+    <ProjectReference Include="..\MapVisualizer\MapVisualizer.csproj">
       <Project>{18b13649-310b-4ee0-9e41-2d6393f0adc1}</Project>
-      <Name>MapVizualizer</Name>
+      <Name>MapVisualizer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

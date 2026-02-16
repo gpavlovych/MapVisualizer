@@ -7,8 +7,8 @@
     <ProjectGuid>{18B13649-310B-4EE0-9E41-2D6393F0ADC1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MapVizualizer</RootNamespace>
-    <AssemblyName>MapVizualizer</AssemblyName>
+    <RootNamespace>MapVisualizer</RootNamespace>
+    <AssemblyName>MapVisualizer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

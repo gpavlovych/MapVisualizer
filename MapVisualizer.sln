@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGeometryDraw", "TestGeometryDraw\TestGeometryDraw.csproj", "{2B48219B-3F77-4B9B-8939-43FFCA8FADEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapVizualizer", "MapVizualizer\MapVizualizer.csproj", "{18B13649-310B-4EE0-9E41-2D6393F0ADC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapVisualizer", "MapVisualizer\MapVisualizer.csproj", "{18B13649-310B-4EE0-9E41-2D6393F0ADC1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGeometryDrawWebApplication", "TestGeometryDrawWebApplication\TestGeometryDrawWebApplication.csproj", "{F601607C-F906-4F1C-8117-AFD2B9FCB5D5}"
 EndProject
