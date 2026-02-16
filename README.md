@@ -21,12 +21,12 @@ MapVisualizer is a .NET library that provides interactive map visualization capa
 
 ```
 MapVisualizer/
-├── MapVizualizer/              # Core library (note: contains typo, will be renamed)
+├── MapVisualizer/              # Core library
 │   ├── MapHelper.cs            # Main API with DrawMap and GetCityAtPoint methods
 │   ├── CityInfo.cs             # City data model
 │   ├── CityAppearanceInfo.cs   # City appearance configuration
 │   ├── geo.edmx                # Entity Framework model for geographic data
-│   └── MapVizualizer.csproj    # Library project file
+│   └── MapVisualizer.csproj    # Library project file
 ├── TestGeometryDraw/           # WinForms demonstration application
 │   ├── Form1.cs                # Main form with map rendering and click handling
 │   └── TestGeometryDraw.csproj # WinForms demo project file
@@ -34,7 +34,7 @@ MapVisualizer/
 │   ├── DrawMap.ashx            # HTTP handler for map rendering
 │   ├── Default.aspx            # Web interface
 │   └── TestGeometryDrawWebApplication.csproj  # Web demo project file
-└── MapVizualizer.sln           # Solution file
+└── MapVisualizer.sln           # Solution file
 ```
 
 ## Prerequisites
@@ -56,7 +56,7 @@ cd MapVisualizer
 
 ### Build the Solution
 
-1. Open `MapVizualizer.sln` in Visual Studio
+1. Open `MapVisualizer.sln` in Visual Studio
 2. Restore NuGet packages (Visual Studio should do this automatically)
 3. Build the solution (F6 or Build > Build Solution)
 
@@ -81,7 +81,7 @@ cd MapVisualizer
 ```csharp
 using System.Drawing;
 using System.Windows.Forms;
-using MapVizualizer;
+using MapVisualizer;
 
 public class MapForm : Form
 {
@@ -142,7 +142,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Web;
-using MapVizualizer;
+using MapVisualizer;
 
 public class DrawMapHandler : IHttpHandler
 {
