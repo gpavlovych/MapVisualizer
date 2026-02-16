@@ -1,6 +1,11 @@
 # MapVisualizer
 
+[![CI Build](https://github.com/gpavlovych/MapVisualizer/actions/workflows/ci-build.yml/badge.svg)](https://github.com/gpavlovych/MapVisualizer/actions/workflows/ci-build.yml)
+[![GitHub Pages](https://github.com/gpavlovych/MapVisualizer/actions/workflows/pages.yml/badge.svg)](https://gpavlovych.github.io/MapVisualizer/)
+
 Clickable map visualization library for ASP.NET WebForms and WinForms applications
+
+**🌐 [Live Project Page](https://gpavlovych.github.io/MapVisualizer/)**
 
 ## Overview
 
